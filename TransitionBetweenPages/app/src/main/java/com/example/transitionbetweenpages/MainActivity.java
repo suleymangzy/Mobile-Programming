@@ -21,21 +21,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
 
         b = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
 
 
         Costumers c1 = new Costumers("Süleyman",20);
+        b.textView.setText("Page 1");
         b.btn.setOnClickListener(view->{
-            Intent gec = new Intent (MainActivity.this, MainActivity2.class);
+            Intent pass = new Intent (MainActivity.this, MainActivity2.class);
             Snackbar.make(view,"Hello",Snackbar.LENGTH_SHORT).show();
-            gec.putExtra("int",15);
-            gec.putExtra("String","Hello");
-            gec.putExtra("double",25.18f);
-            gec.putExtra("m1",c1);
-            startActivity(gec);
+            pass.putExtra("int",15);
+            pass.putExtra("String","Hello");
+            pass.putExtra("double",25.18);
+            pass.putExtra("c1",c1);
+            startActivity(pass);
         });
 
 

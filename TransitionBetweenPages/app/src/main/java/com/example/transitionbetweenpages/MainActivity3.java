@@ -1,5 +1,6 @@
 package com.example.transitionbetweenpages;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -18,10 +19,16 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main3);
 
         b = ActivityMain3Binding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
+
+        b.textView3.setText("Page 3");
+
+        b.button3.setOnClickListener(view -> {
+            Intent pass = new Intent(MainActivity3.this,MainActivity.class);
+            startActivity(pass);
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
