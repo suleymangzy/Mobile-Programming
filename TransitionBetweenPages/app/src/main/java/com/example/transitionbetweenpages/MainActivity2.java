@@ -19,7 +19,6 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main2);
 
         b = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
@@ -28,10 +27,12 @@ public class MainActivity2 extends AppCompatActivity {
         String word = getIntent().getStringExtra("String");
         double number2 = getIntent().getDoubleExtra("double",0.0);
 
+        b.textView2.setText("Page 2");
+
         b.txt2.setText(number1+" "+word+" "+number2);
 
-        Costumers m1 = (Costumers) getIntent().getSerializableExtra("m1");
-        b.txt1.setText(m1.name+" "+m1.age);
+        Costumers c1 = (Costumers) getIntent().getSerializableExtra("c1");
+        b.txt1.setText(c1.name+" "+c1.age);
 
         b.btn1.setOnClickListener(view->{
             Intent pass = new Intent(MainActivity2.this,MainActivity3.class);

@@ -3,6 +3,7 @@ package com.example.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,10 @@ public class LastFragment extends Fragment {
 
         b = FragmentLastBinding.inflate(inflater,container,false);
 
-        // Inflate the layout for this fragment
+         b.button.setOnClickListener(view -> {
+             Navigation.findNavController(view).navigate(R.id.last);
+         });
+
         return b.getRoot();
     }
 }

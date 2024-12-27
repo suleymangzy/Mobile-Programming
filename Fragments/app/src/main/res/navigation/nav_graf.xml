@@ -19,11 +19,6 @@
         android:name="com.example.fragments.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
-        <action
-            android:id="@+id/second"
-            app:destination="@id/lastFragment"
-            app:popUpTo="@id/secondFragment"
-            app:popUpToInclusive="true" />
         <argument
             android:name="name"
             app:argType="string"
@@ -35,10 +30,17 @@
         <argument
             android:name="object"
             app:argType="com.example.fragments.Costumers" />
+        <action
+            android:id="@+id/second"
+            app:destination="@id/lastFragment" />
     </fragment>
     <fragment
         android:id="@+id/lastFragment"
         android:name="com.example.fragments.LastFragment"
         android:label="fragment_last"
-        tools:layout="@layout/fragment_last" />
+        tools:layout="@layout/fragment_last" >
+        <action
+            android:id="@+id/last"
+            app:destination="@id/firstFragment" />
+    </fragment>
 </navigation>
