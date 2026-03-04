@@ -13,7 +13,5 @@ public class Costumers implements Serializable {
         this.name = name;
         this.age = age;
     }
-
-
 }
 
